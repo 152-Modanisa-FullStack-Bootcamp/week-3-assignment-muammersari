@@ -3,8 +3,8 @@
     <div id="app">
       <h1>Daily Corona Cases in Turkey</h1>
       <div
-          class="notificationArea"
-          :class="{
+        class="notificationArea"
+        :class="{
           danger: getCount >= 10,
           normal: getCount >= 5 && getCount < 10,
           safe: getCount < 5,
@@ -19,7 +19,7 @@
 
 <script>
 import Counter from "./Counter";
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "App",
@@ -27,11 +27,9 @@ export default {
     Counter,
   },
   computed: {
-    ...mapGetters([
-        'getCount'
-    ]),
+    ...mapGetters(["getCount"]),
     message() {
-      const count = this.$store.state.count
+      const count = this.$store.state.count;
       if (count >= 10) {
         return `Danger!!! Case count is ${count}k`;
       } else if (count >= 5 && count < 10) {

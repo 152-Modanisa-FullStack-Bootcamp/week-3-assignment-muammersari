@@ -1,8 +1,8 @@
 <template>
   <div class="counter-container">
-    <button @click="decrease">Decrease</button>
+    <button @click="decrease" id="bb">Decrease</button>
     <span>{{ count }}k</span>
-    <button @click="increase">Increase</button>
+    <button @click="increase" id="aa">Increase</button>
   </div>
 </template>
 
@@ -11,15 +11,15 @@ export default {
   name: "Counter",
   computed: {
     count() {
-      return this.$store.state.count
-    }
+      return this.$store.state.count;
+    },
   },
   methods: {
     decrease() {
-      this.$store.dispatch('decrement')
+      this.$store.dispatch("decrement");
     },
     increase() {
-      this.$store.dispatch('increment')
+      this.$store.dispatch("increment");
     },
   },
 };
